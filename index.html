@@ -1,21 +1,91 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <title>Arnav Cloud Gaming</title>
+
+<style>
+
+body{
+background:#0a0a0a;
+color:white;
+font-family:Arial;
+text-align:center;
+}
+
+h1{
+margin-top:30px;
+}
+
+.server{
+color:#00ff88;
+font-weight:bold;
+}
+
+.games{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:40px;
+gap:20px;
+}
+
+.game-card{
+background:#111;
+padding:20px;
+border-radius:10px;
+width:200px;
+box-shadow:0 0 10px #000;
+}
+
+button{
+background:#00ff88;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover{
+background:#00cc6a;
+}
+
+</style>
+
 </head>
 
-<body style="background:black;color:white;text-align:center;font-family:Arial">
+<body>
 
 <h1>🎮 Arnav Cloud Gaming</h1>
 
-<p>Server Status: Online 🟢</p>
+<p class="server">Server Status: Online 🟢</p>
 
-<p>To play games:</p>
-
-<p>1. Install Moonlight</p>
-<p>2. Connect to my PC using my Tailscale IP</p>
+<p>Connect using Moonlight and my Tailscale IP</p>
 
 <h3>ENTER YOUR TAILSCALE IP HERE</h3>
+
+<div class="games">
+
+<div class="game-card">
+<h2>🚗 Forza</h2>
+<p>Racing Game</p>
+<button onclick="alert('Open Moonlight and connect to play Forza')">Play</button>
+</div>
+
+<div class="game-card">
+<h2>⚔️ GTA</h2>
+<p>Open World Game</p>
+<button onclick="alert('Open Moonlight and connect to play GTA')">Play</button>
+</div>
+
+<div class="game-card">
+<h2>🔥 Other Games</h2>
+<p>More coming soon</p>
+<button onclick="alert('Server connection required')">Play</button>
+</div>
+
+</div>
 
 </body>
 </html>
