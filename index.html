@@ -6,92 +6,72 @@
 <style>
 
 body{
+font-family: Arial;
+text-align:center;
 background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 color:white;
-font-family:Arial;
-text-align:center;
-margin:0;
-padding:0;
+padding:20px;
 }
 
 h1{
-margin-top:30px;
-font-size:42px;
+margin-top:20px;
 }
 
 .server{
-font-size:20px;
-color:#00ff88;
-font-weight:bold;
-}
-
-.instructions{
-margin-top:30px;
 font-size:18px;
-line-height:32px;
+margin-bottom:20px;
 }
 
 .games{
-margin-top:40px;
-}
-
-.game-container{
 display:flex;
-justify-content:center;
 flex-wrap:wrap;
-gap:25px;
+justify-content:center;
+gap:15px;
 margin-top:20px;
 }
 
 .game{
-width:200px;
 background:#111;
+padding:15px 25px;
 border-radius:10px;
-padding:10px;
-box-shadow:0 0 15px rgba(0,255,150,0.5);
-}
-
-.game img{
-width:100%;
-border-radius:10px;
-}
-
-.game p{
-margin-top:8px;
-font-weight:bold;
+box-shadow:0 0 10px #00ffcc;
 }
 
 .play-btn{
-margin-top:50px;
-padding:22px 50px;
-font-size:28px;
-background:#00ff88;
-color:black;
+margin-top:30px;
+padding:18px 50px;
+font-size:18px;
 border:none;
-border-radius:15px;
-cursor:pointer;
-box-shadow:0 0 20px #00ff88;
-transition:0.3s;
+border-radius:10px;
+background:#00ff99;
+color:black;
+font-weight:bold;
+box-shadow:0 0 20px #00ff99;
 }
 
-.play-btn:hover{
-transform:scale(1.1);
-box-shadow:0 0 35px #00ff88;
+.toggle-btn{
+margin-top:20px;
+padding:10px 20px;
+border:none;
+border-radius:8px;
+background:#444;
+color:white;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <h1>🎮 Arnav Steam Cloud Gaming</h1>
 
-<p id="serverStatus" class="server">Server Status: 🟢 Online</p>
+<p id="serverStatus" class="server">
+Server Status: 🟢 Online
+</p>
 
-<button onclick="toggleServer()">Toggle Server</button>
-
-<div class="instructions">
+<button class="toggle-btn" onclick="toggleServer()">
+Toggle Server
+</button>
 
 <h2>How To Play</h2>
 
@@ -101,42 +81,55 @@ box-shadow:0 0 35px #00ff88;
 <p>4. Connect to the PC</p>
 <p>5. Start Playing</p>
 
-</div>
+<h2>Available Games</h2>
 
 <div class="games">
 
-<h2>Available Games</h2>
-
-<div class="game-container">
-
 <div class="game">
-<img src="https://upload.wikimedia.org/wikipedia/en/5/5f/Forza_Horizon_5_cover_art.jpg">
-<p>Forza Horizon 5</p>
+1
 </div>
 
 <div class="game">
-<img src="https://upload.wikimedia.org/wikipedia/en/4/44/GTA_San_Andreas_Definitive_Edition.jpg">
-<p>GTA SA Definitive Edition</p>
+2
 </div>
 
 <div class="game">
-<img src="https://upload.wikimedia.org/wikipedia/en/4/44/Tekken_7_cover_art.jpg">
-<p>Tekken 7</p>
+3
 </div>
 
 <div class="game">
-<img src="https://upload.wikimedia.org/wikipedia/en/0/02/The_Amazing_Spider-Man_video_game_cover.jpg">
-<p>Amazing Spider-Man</p>
+4
 </div>
 
 </div>
 
-</div>
-
-<button class="play-btn"
-onclick="alert('Open Steam Link and connect to Arnav PC to start playing!')">
+<button class="play-btn" onclick="openSteamLink()">
 START PLAYING
 </button>
+
+<script>
+
+function openSteamLink(){
+window.location.href="steamlink://";
+}
+
+let serverOnline = true;
+
+function toggleServer(){
+
+serverOnline = !serverOnline;
+
+if(serverOnline){
+document.getElementById("serverStatus").innerHTML =
+"Server Status: 🟢 Online";
+}else{
+document.getElementById("serverStatus").innerHTML =
+"Server Status: 🔴 Offline";
+}
+
+}
+
+</script>
 
 </body>
 </html>
